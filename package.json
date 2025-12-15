@@ -1,0 +1,37 @@
+{
+  "name": "moroz-wishlist-bot",
+  "version": "1.0.0",
+  "description": "Telegram-bot для сбора новогодних желаний",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "pm2": "pm2 start index.js --name moroz-wishlist-bot",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "mysql2": "^3.15.3",
+    "node-telegram-bot-api": "^0.63.0",
+    "winston": "^3.19.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "wishlist",
+    "santa",
+    "christmas",
+    "newyear",
+    "moroz-wishlist",
+    "ded-moroz"
+  ],
+  "author": "mickeybroud",
+  "license": "MIT"
+}
