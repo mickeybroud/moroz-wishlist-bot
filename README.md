@@ -1,4 +1,4 @@
-# 🎅 Santa Wishlist Bot
+# 🎅 Moroz Wishlist Bot
 
 Telegram-бот для сбора новогодних желаний сотрудников с системой администрирования и рассылок.
 
@@ -102,7 +102,7 @@ PORT=3000
 LOG_LEVEL=info
 
 # Path
-ENV_PATH=/home/dev/santa-wishlist-bot/.env
+ENV_PATH=/home/dev/moroz-wishlist-bot/.env
 \`\`\`
 
 ### Шаг 5: Настройка webhook
@@ -165,7 +165,7 @@ pm2 monit
 ## 🏗️ Архитектура
 
 \`\`\`
-santa-wishlist-bot/
+moroz-wishlist-bot/
 ├── src/
 │   ├── config/         # Конфигурация
 │   ├── core/           # Ядро (Database, TelegramBot, Router)
