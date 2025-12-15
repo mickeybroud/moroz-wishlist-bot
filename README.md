@@ -41,20 +41,20 @@ Telegram-бот для сбора новогодних желаний сотру
 
 ### Шаг 1: Клонирование репозитория
 
-\`\`\`bash
+```bash
 git clone https://github.com/mickeybroud/moroz-wishlist-bot.git
 cd moroz-wishlist-bot
-\`\`\`
+```
 
 ### Шаг 2: Установка зависимостей
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ### Шаг 3: Настройка базы данных
 
-\`\`\`bash
+```bash
 # Создание базы данных
 mysql -u root -p
 
@@ -65,20 +65,20 @@ USE moroz_wishlist_bot;
 source migrations/schema.sql;
 
 EXIT;
-\`\`\`
+```
 
 ### Шаг 4: Конфигурация
 
 Создайте `.env` файл:
 
-\`\`\`bash
+```bash
 cp .env.example .env
 nano .env
-\`\`\`
+```
 
 Заполните переменные окружения:
 
-\`\`\`env
+```env
 # Telegram Bot
 BOT_TOKEN=your_bot_token_here
 
@@ -103,7 +103,7 @@ LOG_LEVEL=info
 
 # Path
 ENV_PATH=/home/dev/moroz-wishlist-bot/.env
-\`\`\`
+```
 
 ### Шаг 5: Настройка webhook
 
@@ -114,12 +114,12 @@ ENV_PATH=/home/dev/moroz-wishlist-bot/.env
 ### Шаг 6: Запуск
 
 #### Development:
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 #### Production (с PM2):
-\`\`\`bash
+```bash
 # Установка PM2
 npm install -g pm2
 
@@ -135,7 +135,7 @@ pm2 logs moroz-wishlist-bot
 
 # Мониторинг
 pm2 monit
-\`\`\`
+```
 
 ## 📚 Команды бота
 
@@ -164,7 +164,7 @@ pm2 monit
 
 ## 🏗️ Архитектура
 
-\`\`\`
+```
 moroz-wishlist-bot/
 ├── src/
 │   ├── config/         # Конфигурация
@@ -177,7 +177,7 @@ moroz-wishlist-bot/
 ├── logs/              # Логи
 ├── index.js           # Точка входа
 └── package.json       # Зависимости
-\`\`\`
+```
 
 ## 🔒 Безопасность
 
@@ -202,7 +202,7 @@ moroz-wishlist-bot/
 
 ### Структура проекта:
 
-\`\`\`javascript
+```javascript
 // Пример добавления новой команды
 
 // 1. В CommandHandler.js
@@ -214,11 +214,11 @@ async handleMyCommand(chatId, username, text, message) {
 registerCommands(handler) {
     this.commands.set('/mycommand', handler.handleMyCommand.bind(handler));
 }
-\`\`\`
+```
 
 ### Тестирование:
 
-\`\`\`bash
+```bash
 # Проверка синтаксиса
 node --check index.js
 
@@ -227,7 +227,7 @@ npm run dev
 
 # Просмотр логов
 tail -f logs/combined.log
-\`\`\`
+```
 
 ## 📝 Workflow
 
@@ -240,25 +240,25 @@ tail -f logs/combined.log
 ## 🐛 Troubleshooting
 
 ### Бот не отвечает:
-\`\`\`bash
+```bash
 # Проверьте webhook
 curl "https://api.telegram.org/bot<TOKEN>/getWebhookInfo"
 
 # Проверьте логи
 pm2 logs moroz-wishlist-bot
-\`\`\`
+```
 
 ### Ошибки базы данных:
-\`\`\`bash
+```bash
 # Проверьте подключение
 mysql -u root -p moroz_wishlist_bot
 
 # Проверьте .env
 cat .env | grep DB_
-\`\`\`
+```
 
 ### Проблемы с PM2:
-\`\`\`bash
+```bash
 # Перезапуск
 pm2 restart moroz-wishlist-bot
 
@@ -266,7 +266,7 @@ pm2 restart moroz-wishlist-bot
 pm2 delete moroz-wishlist-bot
 pm2 start index.js --name moroz-wishlist-bot
 pm2 save
-\`\`\`
+```
 
 ## 📄 Лицензия
 
@@ -290,7 +290,7 @@ Pull requests приветствуются! Для крупных изменен
 ---
 
 ⭐ Если проект понравился, поставьте звезду на GitHub!
-\`\`\`
+```
 
 ---
 
