@@ -76,15 +76,15 @@ class CommandHandler {
                 return;
             }
             
-            let outputMessage = '📋 *Список всех желаний:*\n\n';
+            let outputMessage = '📋 <b>Список всех желаний:</b>\n\n';
             
             for (const user of users) {
                 const wishes = [];
-                if (user.wish1) wishes.push(`1️⃣ ${this.validator.escapeMarkdown(user.wish1)}`);
-                if (user.wish2) wishes.push(`2️⃣ ${this.validator.escapeMarkdown(user.wish2)}`);
-                if (user.wish3) wishes.push(`3️⃣ ${this.validator.escapeMarkdown(user.wish3)}`);
+                if (user.wish1) wishes.push(`1️⃣ ${this.validator.escapeHtml(user.wish1)}`);
+                if (user.wish2) wishes.push(`2️⃣ ${this.validator.escapeHtml(user.wish2)}`);
+                if (user.wish3) wishes.push(`3️⃣ ${this.validator.escapeHtml(user.wish3)}`);
                 
-                const wishesText = wishes.length > 0 ? wishes.join('\n') : '_Нет желаний_';
+                const wishesText = wishes.length > 0 ? wishes.join('\n') : '<i>Нет желаний</i>';
                 const usernameText = user.username ? `@${user.username}` : `ID: ${user.chat_id}`;
                 
                 outputMessage += `👤 ${usernameText}\n${wishesText}\n\n`;
@@ -112,13 +112,13 @@ class CommandHandler {
                 return;
             }
             
-            let outputMessage = '📜 *Стихотворения:*\n\n';
+            let outputMessage = '📜 <b>Стихотворения:</b>\n\n';
             
             for (const user of users) {
                 const usernameText = user.username ? `@${user.username}` : `ID: ${user.chat_id}`;
                 const poem = user.poem 
-                    ? this.validator.escapeMarkdown(user.poem) 
-                    : '_Нет стихотворения_';
+                    ? this.validator.escapeHtml(user.poem) 
+                    : '<i>Нет стихотворения</i>';
                 
                 outputMessage += `👤 ${usernameText}\n${poem}\n\n`;
             }
@@ -135,6 +135,7 @@ class CommandHandler {
         await this.bot.sendMessage(
             chatId,
             `Здесь ты можешь написать о своих желаниях Деду Морозу. Иногда чудеса случаются, помни об этом 😉\n\n` +
+            `<b>Список твоих желаний: /wishes</b>\n\n` +
             `Автор: @cape0town\n` +
             `Этот бот - проект с открытым исходным кодом на NodeJS\n` +
             `https://github.com/mickeybroud/moroz-wishlist-bot`
@@ -288,7 +289,7 @@ class CommandHandler {
                 return;
             }
             
-            let outputMessage = '👥 *Список пользователей:*\n\n';
+            let outputMessage = '👥 <b>Список пользователей:</b>\n\n';
             let counter = 1;
             
             for (const user of users) {
@@ -366,14 +367,14 @@ class CommandHandler {
         
         await this.bot.sendMessage(
             chatId,
-            `📢 *Режим массовой рассылки*\n\n` +
+            `📢 <b>Режим массовой рассылки</b>\n\n` +
             `Отправьте сообщение, которое будет отправлено всем пользователям бота.\n\n` +
             `Вы можете отправить:\n` +
             `• Текст\n` +
             `• Фото (с подписью или без)\n` +
             `• Видео (с подписью или без)\n` +
             `• Документ\n\n` +
-            `⚠️ *Внимание:* Сообщение будет отправлено ВСЕМ пользователям!\n\n` +
+            `⚠️ <b>Внимание:</b> Сообщение будет отправлено ВСЕМ пользователям!\n\n` +
             `Напишите /cancel для отмены.`
         );
     }

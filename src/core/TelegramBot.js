@@ -53,7 +53,7 @@ class TelegramBot {
     async sendMessage(chatId, text, options = {}) {
         try {
             const defaultOptions = {
-                parse_mode: 'Markdown',
+                parse_mode: 'HTML',
                 ...options
             };
 

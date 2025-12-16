@@ -108,10 +108,10 @@ class WishService {
     }
 
     formatWishesForDisplay(wishes) {
-        let message = '🎄 Твои желания:\n\n';
-        message += `1️⃣ ${wishes.wish1 || 'Не задано'}\n`;
-        message += `2️⃣ ${wishes.wish2 || 'Не задано'}\n`;
-        message += `3️⃣ ${wishes.wish3 || 'Не задано'}\n`;
+        let message = '🎄 <b>Твои желания:</b>\n\n';
+        message += `1️⃣ ${wishes.wish1 || 'Тут пусто'}\n`;
+        message += `2️⃣ ${wishes.wish2 || 'Тут пусто'}\n`;
+        message += `3️⃣ ${wishes.wish3 || 'Тут пусто'}\n`;
         return message;
     }
 

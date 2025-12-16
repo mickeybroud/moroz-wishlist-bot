@@ -65,7 +65,7 @@ class ValidationService {
         const specialChars = [
             '_', '*', '[', ']', '(', ')', 
             '~', '`', '>', '#', '+', '-', 
-            '=', '|', '{', '}', '.', '!'
+            '=', '|', '{', '}'
         ];
         
         let escaped = text;
