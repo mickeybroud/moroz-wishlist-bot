@@ -275,16 +275,6 @@ pm2 save
 
 MIT License
 
-## 🤝 Вклад
-
-Pull requests приветствуются! Для крупных изменений сначала откройте issue.
-
-## 📞 Поддержка
-
-Если у вас возникли вопросы:
-1. Проверьте [Issues](https://github.com/mickeybroud/moroz-wishlist-bot/issues)
-2. Создайте новый Issue
-
 ### Deployment:
 ```bash
 cd /home/dev/moroz-wishlist-bot
@@ -302,4 +292,5 @@ pm2 restart moroz-wishlist-bot
 mysql -u root -p moroz_wishlist_bot
 UPDATE users SET is_admin = 1 WHERE username = 'your_username';
 EXIT;
+
 ```
